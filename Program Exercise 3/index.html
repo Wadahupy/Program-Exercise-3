@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #262626;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.644),rgba(0, 0, 0, 0.575)),url('mrbeast-rap-battle.gif');
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.411);
+        color: white;
+        padding: 20px 100px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.767);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 0;
+    }
+    .navbar ul {
+        list-style-type: none;
+        text-align: center;
+    }
+    .navbar ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        font-size: 30px;
+        transition: color 0.3s;
+    }
+    .navbar ul li a:hover {
+        color: #169ACE;
+    }
+    
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, transparent, #0004);
+        border: 5px solid #169ACE;
+        background-color: white;
+        border-radius: 20px;
+        margin-top: 50px; 
+        padding: 10px 10px 10px 10px;
+    }
+    .container .box {
+        position: relative;
+        width: 400px;
+        height: 500px;
+        background: #444;
+        border-radius: 20px;
+        background: linear-gradient(45deg, #169ACE 25%, 
+        #444 25%, #444 50%, #169ACE 50%, #169ACE 75%, #444 75%, #444 100%);
+        background-size: 40px 40px;
+        filter: grayscale(1);
+        animation: animateBg 0.5s linear infinite;
+        animation-play-state: paused;
+        transition: filter 1s;
+    }
+    .container .box:hover {
+        animation-play-state: running;
+        filter: grayscale(0);
+    }
+    @keyframes animateBg {
+        0% {
+            background-position: 0;
+        }
+        100% {
+            background-position: 40px;
+        }
+    }
+    .container .box img {
+        position: absolute;
+        bottom: 0;
+        transition: height 0.5s;
+        height: 100%;
+        padding-left: 60px;
+    }
+    .container .box:hover img {
+        height: 560px;
+    }
+    .checkbox-container {
+        padding-top: 50px;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .checkbox-container input[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    .checkmark {
+        position: relative;
+        height: 50px;
+        width: 50px;
+        background-color: #eee;
+        border-radius: 100px;
+        transition: background-color 0.3s ease;
+        margin-right: 10px;
+        border: 3px solid #169ACE;
+    }
+    .checkbox-container:hover .checkmark {
+        background-color: #ccc;
+    }
+    .checkbox-container input[type="checkbox"]:checked + .checkmark {
+        background-color: #2196F3;
+    }
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    .checkbox-container input[type="checkbox"]:checked + .checkmark:after {
+        display: block;
+    }
+    .checkbox-container .checkmark:after {
+        left: 19px;
+        top: 11px;
+        width: 5px;
+        height: 15px;
+        border: solid white;
+        border-width: 0 4px 4px 0;
+        transform: rotate(45deg);
+        transition: transform 0.5s ease;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="box">
+            <img src="mr.beast.png" alt="picture">
+        </div>
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</body>
+</html>
